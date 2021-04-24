@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="../../css/reset.css">
+    <link rel="stylesheet" href="../../css/base.css">
+    <link rel="stylesheet" href="../../css/layout.css">
+    <link rel="stylesheet" href="../../css/modules.css">
+
+</head>
+<body>
+
+    <header>
+
+        <%- include('../layouts/header') %> 
+
+    </header>
+
+    <main>
+        <div class="wrap">
+            <% data.forEach(e=>{%>
+
+                <div class="container">
+                    <h3>
+                        <%= e.name %> 
+                    </h3>
+
+                    <h4>
+                        <%= e.house %> 
+                    </h4>
+
+                    <h4>
+                        <%= e.patronus %> 
+                    </h4>
+
+                    <img src="<%= e.image %> " alt="">
+
+                    <h4>
+                        <%= e.alive %> 
+                    </h4>
+                    <form action="/fav-char" method="post">
+                        <input type="hidden" name="name" value="<%=e.name%>">
+                        <input type="hidden" name="house" value="<%= e.house %> ">
+                        <input type="hidden" name="patronus" value="<%= e.patronus %> ">
+                        <input type="hidden" name="image" value="<%= e.image %>">
+                        <input type="hidden" name="alive" value="<%= e.alive %>">
+    
+                        <button type="submit"> Add to Fav</button>
+    
+                    </form>
+                </div>
+
+
+
+            <% }) %> 
+        </div>
+    </main>
+    
+</body>
+</html>

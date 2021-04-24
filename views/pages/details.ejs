@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../css/reset.css">
+    <link rel="stylesheet" href="../../css/base.css">
+    <link rel="stylesheet" href="../../css/layout.css">
+    <link rel="stylesheet" href="../../css/modules.css">
+</head>
+
+<body>
+
+    <header>
+        <%- include('../layouts/header') %> 
+
+    </header>
+
+    <main>
+
+        <div class="container">
+            <h3>
+                <%= data.name %>
+            </h3>
+
+            <h4>
+                <%= data.house %>
+            </h4>
+
+            <h4>
+                <%= data.patronus %>
+            </h4>
+
+            <img src="<%= data.image %> " alt="">
+
+            <h4>
+                <%= data.alive %>
+            </h4>
+
+            <form action="/detail/<%= data.id %>?_method=PUT" method="post">
+
+                <input  name="name" value="<%=data.name%>"> <br>
+                <input  name="house" value="<%= data.house %> "> <br>
+                <input  name="patronus" value="<%= data.patronus %> "> <br>
+                <input  name="image" value="<%= data.image %>"> <br>
+                <select name="alive" id="">
+                    <% if (data.alive) { %>
+
+                        <option value="true"> Alive </option>
+                        <option value="false">Dead</option>
+                    <% } else { %>
+
+                        <option value="false">Dead</option>
+                        <option value="true"> Alive </option>
+
+                    <% } %> 
+                </select> <br>
+                <!-- <input  name="alive" value="<%= data.alive %>"> -->
+
+                <button type="submit"> Update </button>
+            
+            </form>
+
+            <form action="/detail/<%= data.id %>?_method=delete" method="post">
+
+                <button type="submit"> Delete </button>
+            
+            </form>
+
+        </div>
+
+
+    </main>
+
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../css/reset.css">
+    <link rel="stylesheet" href="../../css/base.css">
+    <link rel="stylesheet" href="../../css/layout.css">
+    <link rel="stylesheet" href="../../css/modules.css">
+</head>
+<body>
+
+    <header>
+        <%- include('../layouts/header') %> 
+
+    </header>
+
+    <main>
+        <div class="wrap-fav">
+            <% data.forEach(e=>{%>
+
+                <div class="container">
+                    <h3>
+                        <%= e.name %> 
+                    </h3>
+
+                    <h4>
+                        <%= e.house %> 
+                    </h4>
+
+                    <h4>
+                        <%= e.patronus %> 
+                    </h4>
+
+                    <img src="<%= e.image %> " alt="">
+
+                    <h4>
+                        <%= e.alive %> 
+                    </h4>
+
+                    <button><a href="/detail/<%=e.id%>"> View Details </a></button>
+                </div>
+
+
+
+            <% }) %> 
+        </div>
+    </main>
+    
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create New Character</title>
+    <link rel="stylesheet" href="../../css/reset.css">
+    <link rel="stylesheet" href="../../css/base.css">
+    <link rel="stylesheet" href="../../css/layout.css">
+    <link rel="stylesheet" href="../../css/modules.css">
+</head>
+
+<body>
+
+    <header>
+        <%- include('../layouts/header') %>
+
+    </header>
+
+    <main>
+        <form action="/created-char" method="post">
+
+            <input name="name" value="" placeholder="Enter the Character Name"> <br>
+            <input name="house" value="" placeholder="Enter the Character House"> <br>
+            <input name="patronus" value="" placeholder="Enter the Character patronus"> <br>
+            <input name="image" value="" value="" placeholder="Character image link"> <br>
+            <select name="alive" id="" placeholder="Is the Character Alive?" >
+                <option value="true"> Alive </option>
+                <option value="false">Dead</option>
+            </select> <br>
+            <button type="submit"> Create new Character </button>
+
+        </form>
+    </main>
+
+</body>
+
+</html>
